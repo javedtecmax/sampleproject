@@ -6,4 +6,10 @@ node {
    stage('hello world') {
       sh 'echo hello world'
    }
+   stage('parallel state') {
+     parallel (
+        'adding parameter': {
+            build job: 'ansible_parameter', parameters: [[$class: 'stringParameterValue', name: 'ansible_parameter', value: "Hello World"]]
+          }
+     )
    }  
