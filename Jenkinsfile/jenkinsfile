@@ -1,0 +1,9 @@
+node {
+   deleteDir()
+   stage('checkout') {
+      checkout scm
+   }
+   stage('hello world') {
+      sh 'echo hello world'
+   }
+   }  
